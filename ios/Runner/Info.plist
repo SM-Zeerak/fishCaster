@@ -35,6 +35,18 @@
 	<key>PHPhotoLibraryUsageDescription</key>
 	<string>This app needs access to your photo library.</string>
 
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your message explaining why the app needs access to location when in use</string>
+
+	<!-- Optional: If you need background location access -->
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your message explaining why the app needs access to location at all times</string>
+
+	<!-- Optional: For macOS -->
+	<key>NSLocationUsageDescription</key>
+	<string>Your message explaining why the app needs access to location on macOS</string>
+
+
 
 
 	<key>UIMainStoryboardFile</key>

@@ -3,6 +3,7 @@ import 'package:fish_caster/screen/home_screen/tabs/help_tab/HelpTab.dart';
 import 'package:fish_caster/screen/home_screen/tabs/home_tab/homeTab.dart';
 import 'package:fish_caster/screen/home_screen/tabs/setting_tab/settginTab.dart';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,12 +15,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
-    Hometab(),
-    HelpTab(),
-    Center(child: Text("Share")),
-    Settgintab()
-  ];
+  final List<Widget> _pages = [Hometab(), HelpTab(), Container(), Settgintab()];
 
   final List<String> _icons = [
     ImgCons.homeIcon,
@@ -33,7 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
       body: _pages[_selectedIndex],
       bottomNavigationBar: Container(
         height: 110,
@@ -53,7 +48,14 @@ class _HomeScreenState extends State<HomeScreen> {
             bool isSelected = index == _selectedIndex;
 
             return GestureDetector(
-              onTap: () => setState(() => _selectedIndex = index),
+              // onTap: () => setState(() => _selectedIndex = index),
+              onTap: () async {
+                if (index == 2) {
+                  await Share.share("Check out Fish Caster App!");
+                } else {
+                  setState(() => _selectedIndex = index);
+                }
+              },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

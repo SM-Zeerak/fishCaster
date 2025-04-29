@@ -20,6 +20,9 @@ class ImgCons {
   static const String locationIcon = 'assets/images/locationIcon.png';
   static const String fireIcon = 'assets/images/fireIcon.png';
   static const String searchIcon = 'assets/images/searchIcon.png';
+  static const String sunIcon = 'assets/images/sunIcon.png';
+  static const String darkIcon = 'assets/images/darkIcon.png';
+
 
 
 
